@@ -21,7 +21,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #000;
+  @apply bg-primecraft-bg;
 }
 
 @media (prefers-reduced-motion: reduce) {

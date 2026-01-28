@@ -12,7 +12,7 @@ export default function Navigation() {
 
   useEffect(() => {
     // Animate navigation on mount
-    gsap.fromTo('.nav-item', 
+    gsap.fromTo('.nav-item',
       { opacity: 0, y: -20 },
       { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.5 }
     )
@@ -24,10 +24,10 @@ export default function Navigation() {
       setIsOpen(false)
       return
     }
-    
+
     e.preventDefault()
     setIsOpen(false)
-    
+
     const tl = gsap.timeline({
       onComplete: () => {
         router.push(href)
@@ -45,13 +45,13 @@ export default function Navigation() {
       ease: 'power2.inOut',
       transformOrigin: 'top'
     })
-    .to('.page-transition', {
-      scaleY: 0,
-      duration: 0.4,
-      ease: 'power2.inOut',
-      transformOrigin: 'bottom',
-      delay: 0.2
-    })
+      .to('.page-transition', {
+        scaleY: 0,
+        duration: 0.4,
+        ease: 'power2.inOut',
+        transformOrigin: 'bottom',
+        delay: 0.2
+      })
   }
 
   const navItems = [
@@ -64,13 +64,12 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="fixed top-0 z-40 w-full bg-black/80 backdrop-blur-sm">
+      <nav className="fixed top-0 z-40 w-full bg-primecraft-blue shadow-lg transition-all duration-300">
         <div className="container mx-auto px-4">
           <div className="flex h-20 items-center justify-between">
-            {/* Logo */}
             <Link href="/" className="nav-item">
-              <span className="text-2xl font-black uppercase tracking-wider text-yellow-400">
-                PRIMECRAFT
+              <span className="text-2xl font-black uppercase tracking-wider text-white">
+                PRIMECRAFT <span className="text-primecraft-yellow">.</span>
               </span>
             </Link>
 
@@ -81,15 +80,14 @@ export default function Navigation() {
                   key={item.href}
                   href={item.href}
                   onClick={(e) => handleLinkClick(e, item.href)}
-                  className={`nav-item relative text-sm font-semibold uppercase tracking-wider transition-colors ${
-                    pathname === item.href
-                      ? 'text-yellow-400'
-                      : 'text-white hover:text-blue-400'
-                  }`}
+                  className={`nav-item relative text-sm font-semibold uppercase tracking-wider transition-colors ${pathname === item.href
+                    ? 'text-yellow-400'
+                    : 'text-white hover:text-blue-400'
+                    }`}
                 >
                   {item.label}
                   {pathname === item.href && (
-                    <span className="absolute -bottom-1 left-0 h-0.5 w-full bg-yellow-400"></span>
+                    <span className="absolute -bottom-1 left-0 h-0.5 w-full bg-white"></span>
                   )}
                 </Link>
               ))}
@@ -101,18 +99,17 @@ export default function Navigation() {
               className="nav-item z-50 flex flex-col gap-1.5 md:hidden"
               aria-label="Toggle menu"
             >
-              <span className={`h-0.5 w-6 bg-yellow-400 transition-all ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-              <span className={`h-0.5 w-6 bg-yellow-400 transition-all ${isOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`h-0.5 w-6 bg-yellow-400 transition-all ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              <span className={`h-0.5 w-6 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`h-0.5 w-6 bg-white transition-all ${isOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`h-0.5 w-6 bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         <div
-          className={`absolute top-20 left-0 w-full bg-black/95 backdrop-blur-md transition-all duration-300 md:hidden ${
-            isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-          }`}
+          className={`absolute top-20 left-0 w-full bg-primecraft-blue shadow-xl transition-all duration-300 md:hidden ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+            }`}
         >
           <div className="container mx-auto px-4 py-4">
             {navItems.map((item) => (
@@ -123,11 +120,10 @@ export default function Navigation() {
                   handleLinkClick(e, item.href)
                   setIsOpen(false)
                 }}
-                className={`block py-3 text-sm font-semibold uppercase tracking-wider transition-colors ${
-                  pathname === item.href
-                    ? 'text-yellow-400'
-                    : 'text-white hover:text-blue-400'
-                }`}
+                className={`block py-3 text-sm font-semibold uppercase tracking-wider transition-colors ${pathname === item.href
+                  ? 'text-yellow-400'
+                  : 'text-white hover:text-blue-400'
+                  }`}
               >
                 {item.label}
               </Link>

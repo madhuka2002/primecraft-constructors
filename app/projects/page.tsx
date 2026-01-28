@@ -130,15 +130,15 @@ export default function Projects() {
   const categories = ['All', 'Industrial', 'Commercial', 'Infrastructure', 'Restoration']
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-gray-800 bg-gradient-to-b from-gray-900 to-black py-24">
+      <section className="relative overflow-hidden border-b border-gray-200 bg-white py-24">
         <div className="container mx-auto px-4">
           <h1 className="mb-6 text-5xl font-black uppercase tracking-wider md:text-7xl">
-            <span className="text-yellow-400">OUR</span>{' '}
-            <span className="text-blue-400">PROJECTS</span>
+            <span className="text-primecraft-yellow">OUR</span>{' '}
+            <span className="text-primecraft-blue">PROJECTS</span>
           </h1>
-          <p className="max-w-3xl text-xl text-gray-300 md:text-2xl">
+          <p className="max-w-3xl text-xl text-gray-700 md:text-2xl">
             Explore our portfolio of successful construction projects, each representing our commitment to excellence and innovation.
           </p>
         </div>
@@ -167,22 +167,20 @@ export default function Projects() {
                 className="project-card group relative overflow-hidden rounded-lg border border-gray-800 bg-gray-900/50 transition-all"
               >
                 {/* Project Image Placeholder */}
-                <div className={`relative h-64 overflow-hidden ${
-                  project.color === 'yellow' ? 'bg-gradient-to-br from-yellow-400/20 to-yellow-600/10' :
-                  project.color === 'blue' ? 'bg-gradient-to-br from-blue-400/20 to-blue-600/10' :
-                  'bg-gradient-to-br from-orange-400/20 to-orange-600/10'
-                }`}>
+                <div className={`relative h-64 overflow-hidden ${project.color === 'yellow' ? 'bg-gradient-to-br from-yellow-400/20 to-yellow-600/10' :
+                    project.color === 'blue' ? 'bg-gradient-to-br from-blue-400/20 to-blue-600/10' :
+                      'bg-gradient-to-br from-orange-400/20 to-orange-600/10'
+                  }`}>
                   <div className="absolute inset-0 flex items-center justify-center text-8xl opacity-50">
                     {project.image}
                   </div>
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-black/60 opacity-0 transition-opacity group-hover:opacity-100"></div>
                   {/* Category Badge */}
-                  <div className={`absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-bold uppercase ${
-                    project.color === 'yellow' ? 'bg-yellow-400 text-black' :
-                    project.color === 'blue' ? 'bg-blue-400 text-white' :
-                    'bg-orange-400 text-white'
-                  }`}>
+                  <div className={`absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-bold uppercase ${project.color === 'yellow' ? 'bg-yellow-400 text-black' :
+                      project.color === 'blue' ? 'bg-blue-400 text-white' :
+                        'bg-orange-400 text-white'
+                    }`}>
                     {project.category}
                   </div>
                 </div>
@@ -190,11 +188,10 @@ export default function Projects() {
                 {/* Project Info */}
                 <div className="p-6">
                   <div className="mb-2 flex items-center justify-between">
-                    <span className={`text-sm font-bold ${
-                      project.color === 'yellow' ? 'text-yellow-400' :
-                      project.color === 'blue' ? 'text-blue-400' :
-                      'text-orange-400'
-                    }`}>
+                    <span className={`text-sm font-bold ${project.color === 'yellow' ? 'text-yellow-400' :
+                        project.color === 'blue' ? 'text-blue-400' :
+                          'text-orange-400'
+                      }`}>
                       {project.year}
                     </span>
                   </div>
@@ -202,22 +199,20 @@ export default function Projects() {
                   <p className="mb-4 text-gray-400">{project.description}</p>
                   <Link
                     href={`/projects/${project.id}`}
-                    className={`inline-block font-semibold uppercase tracking-wider transition-colors ${
-                      project.color === 'yellow' ? 'text-yellow-400 hover:text-yellow-300' :
-                      project.color === 'blue' ? 'text-blue-400 hover:text-blue-300' :
-                      'text-orange-400 hover:text-orange-300'
-                    }`}
+                    className={`inline-block font-semibold uppercase tracking-wider transition-colors ${project.color === 'yellow' ? 'text-yellow-400 hover:text-yellow-300' :
+                        project.color === 'blue' ? 'text-blue-400 hover:text-blue-300' :
+                          'text-orange-400 hover:text-orange-300'
+                      }`}
                   >
                     View Details →
                   </Link>
                 </div>
 
                 {/* Hover Effect Border */}
-                <div className={`absolute inset-0 rounded-lg border-2 opacity-0 transition-opacity group-hover:opacity-100 ${
-                  project.color === 'yellow' ? 'border-yellow-400' :
-                  project.color === 'blue' ? 'border-blue-400' :
-                  'border-orange-400'
-                }`}></div>
+                <div className={`absolute inset-0 rounded-lg border-2 opacity-0 transition-opacity group-hover:opacity-100 ${project.color === 'yellow' ? 'border-yellow-400' :
+                    project.color === 'blue' ? 'border-blue-400' :
+                      'border-orange-400'
+                  }`}></div>
               </div>
             ))}
           </div>

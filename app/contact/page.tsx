@@ -136,15 +136,15 @@ export default function Contact() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-gray-800 bg-gradient-to-b from-gray-900 to-black py-24">
+      <section className="relative overflow-hidden border-b border-gray-200 bg-white py-24">
         <div className="container mx-auto px-4">
           <h1 className="mb-6 text-5xl font-black uppercase tracking-wider md:text-7xl">
-            <span className="text-yellow-400">GET</span>{' '}
-            <span className="text-blue-400">IN TOUCH</span>
+            <span className="text-primecraft-yellow">GET</span>{' '}
+            <span className="text-primecraft-blue">IN TOUCH</span>
           </h1>
-          <p className="max-w-3xl text-xl text-gray-300 md:text-2xl">
+          <p className="max-w-3xl text-xl text-gray-700 md:text-2xl">
             Ready to start your next construction project? Let's discuss how we can bring your vision to life.
           </p>
         </div>
@@ -161,21 +161,19 @@ export default function Contact() {
                 className="contact-icon group relative overflow-hidden rounded-lg border border-gray-800 bg-gray-900/50 p-6 text-center transition-all hover:border-yellow-400 hover:bg-gray-900"
               >
                 <div className="mb-4 text-5xl">{info.icon}</div>
-                <h3 className={`mb-2 text-sm font-bold uppercase tracking-wider ${
-                  info.color === 'yellow' ? 'text-yellow-400' :
-                  info.color === 'blue' ? 'text-blue-400' :
-                  'text-orange-400'
-                }`}>
+                <h3 className={`mb-2 text-sm font-bold uppercase tracking-wider ${info.color === 'yellow' ? 'text-yellow-400' :
+                    info.color === 'blue' ? 'text-blue-400' :
+                      'text-orange-400'
+                  }`}>
                   {info.label}
                 </h3>
                 <p className="text-sm text-gray-400 group-hover:text-white">
                   {info.value}
                 </p>
-                <div className={`absolute inset-0 opacity-0 transition-opacity group-hover:opacity-10 ${
-                  info.color === 'yellow' ? 'bg-yellow-400' :
-                  info.color === 'blue' ? 'bg-blue-400' :
-                  'bg-orange-400'
-                }`}></div>
+                <div className={`absolute inset-0 opacity-0 transition-opacity group-hover:opacity-10 ${info.color === 'yellow' ? 'bg-yellow-400' :
+                    info.color === 'blue' ? 'bg-blue-400' :
+                      'bg-orange-400'
+                  }`}></div>
               </a>
             ))}
           </div>

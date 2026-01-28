@@ -110,15 +110,15 @@ export default function About() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-gray-800 bg-gradient-to-b from-gray-900 to-black py-24">
+      <section className="relative overflow-hidden border-b border-gray-200 bg-white py-24">
         <div className="container mx-auto px-4">
           <h1 className="mb-6 text-5xl font-black uppercase tracking-wider md:text-7xl">
-            <span className="text-yellow-400">ABOUT</span>{' '}
-            <span className="text-blue-400">PRIMECRAFT</span>
+            <span className="text-primecraft-yellow">ABOUT</span>{' '}
+            <span className="text-primecraft-blue">PRIMECRAFT</span>
           </h1>
-          <p className="max-w-3xl text-xl text-gray-300 md:text-2xl">
+          <p className="max-w-3xl text-xl text-gray-700 md:text-2xl">
             Building excellence for over 25 years, PRIMECRAFT CONSTRUCTORS has established itself as a leader in industrial construction, delivering innovative solutions and unmatched quality.
           </p>
         </div>
@@ -140,26 +140,22 @@ export default function About() {
               {timeline.map((item, index) => (
                 <div
                   key={index}
-                  className={`timeline-item relative flex items-center gap-8 ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
+                  className={`timeline-item relative flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                    }`}
                 >
                   {/* Timeline Dot */}
-                  <div className={`absolute left-8 h-4 w-4 rounded-full border-4 border-black ${
-                    item.color === 'yellow' ? 'bg-yellow-400' :
-                    item.color === 'blue' ? 'bg-blue-400' :
-                    'bg-orange-400'
-                  } md:left-1/2 md:-translate-x-1/2`}></div>
+                  <div className={`absolute left-8 h-4 w-4 rounded-full border-4 border-black ${item.color === 'yellow' ? 'bg-yellow-400' :
+                      item.color === 'blue' ? 'bg-blue-400' :
+                        'bg-orange-400'
+                    } md:left-1/2 md:-translate-x-1/2`}></div>
 
                   {/* Content */}
-                  <div className={`ml-20 flex-1 rounded-lg border border-gray-800 bg-gray-900/50 p-6 md:ml-0 ${
-                    index % 2 === 0 ? 'md:mr-auto md:w-5/12' : 'md:ml-auto md:w-5/12'
-                  }`}>
-                    <div className={`mb-2 text-2xl font-black ${
-                      item.color === 'yellow' ? 'text-yellow-400' :
-                      item.color === 'blue' ? 'text-blue-400' :
-                      'text-orange-400'
+                  <div className={`ml-20 flex-1 rounded-lg border border-gray-800 bg-gray-900/50 p-6 md:ml-0 ${index % 2 === 0 ? 'md:mr-auto md:w-5/12' : 'md:ml-auto md:w-5/12'
                     }`}>
+                    <div className={`mb-2 text-2xl font-black ${item.color === 'yellow' ? 'text-yellow-400' :
+                        item.color === 'blue' ? 'text-blue-400' :
+                          'text-orange-400'
+                      }`}>
                       {item.year}
                     </div>
                     <h3 className="mb-2 text-xl font-bold">{item.title}</h3>

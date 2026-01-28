@@ -84,15 +84,15 @@ export default function Blog() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-gray-800 bg-gradient-to-b from-gray-900 to-black py-24">
+      <section className="relative overflow-hidden border-b border-gray-200 bg-white py-24">
         <div className="container mx-auto px-4">
           <h1 className="mb-6 text-5xl font-black uppercase tracking-wider md:text-7xl">
-            <span className="text-yellow-400">BLOG</span>{' '}
-            <span className="text-blue-400">& INSIGHTS</span>
+            <span className="text-primecraft-yellow">BLOG</span>{' '}
+            <span className="text-primecraft-blue">& INSIGHTS</span>
           </h1>
-          <p className="max-w-3xl text-xl text-gray-300 md:text-2xl">
+          <p className="max-w-3xl text-xl text-gray-700 md:text-2xl">
             Stay updated with the latest news, insights, and trends in the construction industry.
           </p>
         </div>
@@ -108,11 +108,10 @@ export default function Blog() {
                 className="blog-post group relative overflow-hidden rounded-lg border border-gray-800 bg-gray-900/50 p-8 transition-all hover:border-yellow-400 hover:bg-gray-900"
               >
                 <div className="mb-4 flex items-center gap-4">
-                  <span className={`rounded-full px-4 py-1 text-xs font-bold uppercase ${
-                    post.color === 'yellow' ? 'bg-yellow-400 text-black' :
-                    post.color === 'blue' ? 'bg-blue-400 text-white' :
-                    'bg-orange-400 text-white'
-                  }`}>
+                  <span className={`rounded-full px-4 py-1 text-xs font-bold uppercase ${post.color === 'yellow' ? 'bg-yellow-400 text-black' :
+                      post.color === 'blue' ? 'bg-blue-400 text-white' :
+                        'bg-orange-400 text-white'
+                    }`}>
                     {post.category}
                   </span>
                   <span className="text-sm text-gray-500">{post.date}</span>
@@ -126,22 +125,20 @@ export default function Blog() {
 
                 <Link
                   href={`/blog/${post.id}`}
-                  className={`inline-flex items-center gap-2 font-semibold uppercase tracking-wider transition-colors ${
-                    post.color === 'yellow' ? 'text-yellow-400 hover:text-yellow-300' :
-                    post.color === 'blue' ? 'text-blue-400 hover:text-blue-300' :
-                    'text-orange-400 hover:text-orange-300'
-                  }`}
+                  className={`inline-flex items-center gap-2 font-semibold uppercase tracking-wider transition-colors ${post.color === 'yellow' ? 'text-yellow-400 hover:text-yellow-300' :
+                      post.color === 'blue' ? 'text-blue-400 hover:text-blue-300' :
+                        'text-orange-400 hover:text-orange-300'
+                    }`}
                 >
                   Read More
                   <span className="transition-transform group-hover:translate-x-1">→</span>
                 </Link>
 
                 {/* Hover Effect */}
-                <div className={`absolute inset-0 rounded-lg border-2 opacity-0 transition-opacity group-hover:opacity-100 ${
-                  post.color === 'yellow' ? 'border-yellow-400' :
-                  post.color === 'blue' ? 'border-blue-400' :
-                  'border-orange-400'
-                }`}></div>
+                <div className={`absolute inset-0 rounded-lg border-2 opacity-0 transition-opacity group-hover:opacity-100 ${post.color === 'yellow' ? 'border-yellow-400' :
+                    post.color === 'blue' ? 'border-blue-400' :
+                      'border-orange-400'
+                  }`}></div>
               </article>
             ))}
           </div>
